@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		51A9E82B2D64D08A00C57FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51A9E80F2D64D08900C57FF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51A9E8162D64D08900C57FF4;
+			remoteInfo = "Country Encyclopedia";
+		};
+		51A9E8352D64D08A00C57FF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51A9E80F2D64D08900C57FF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51A9E8162D64D08900C57FF4;
+			remoteInfo = "Country Encyclopedia";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		51A9E8172D64D08900C57FF4 /* Country Encyclopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Country Encyclopedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51A9E82A2D64D08A00C57FF4 /* Country EncyclopediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Country EncyclopediaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51A9E8342D64D08A00C57FF4 /* Country EncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Country EncyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		51A9E8192D64D08900C57FF4 /* Country Encyclopedia */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Country Encyclopedia";
+			sourceTree = "<group>";
+		};
+		51A9E82D2D64D08A00C57FF4 /* Country EncyclopediaTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Country EncyclopediaTests";
+			sourceTree = "<group>";
+		};
+		51A9E8372D64D08A00C57FF4 /* Country EncyclopediaUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Country EncyclopediaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		51A9E8142D64D08900C57FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A9E8272D64D08A00C57FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A9E8312D64D08A00C57FF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51A9E80E2D64D08900C57FF4 = {
+			isa = PBXGroup;
+			children = (
+				51A9E8192D64D08900C57FF4 /* Country Encyclopedia */,
+				51A9E82D2D64D08A00C57FF4 /* Country EncyclopediaTests */,
+				51A9E8372D64D08A00C57FF4 /* Country EncyclopediaUITests */,
+				51A9E8182D64D08900C57FF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		51A9E8182D64D08900C57FF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51A9E8172D64D08900C57FF4 /* Country Encyclopedia.app */,
+				51A9E82A2D64D08A00C57FF4 /* Country EncyclopediaTests.xctest */,
+				51A9E8342D64D08A00C57FF4 /* Country EncyclopediaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		51A9E8162D64D08900C57FF4 /* Country Encyclopedia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51A9E83E2D64D08A00C57FF4 /* Build configuration list for PBXNativeTarget "Country Encyclopedia" */;
+			buildPhases = (
+				51A9E8132D64D08900C57FF4 /* Sources */,
+				51A9E8142D64D08900C57FF4 /* Frameworks */,
+				51A9E8152D64D08900C57FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				51A9E8192D64D08900C57FF4 /* Country Encyclopedia */,
+			);
+			name = "Country Encyclopedia";
+			packageProductDependencies = (
+			);
+			productName = "Country Encyclopedia";
+			productReference = 51A9E8172D64D08900C57FF4 /* Country Encyclopedia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		51A9E8292D64D08A00C57FF4 /* Country EncyclopediaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51A9E8412D64D08A00C57FF4 /* Build configuration list for PBXNativeTarget "Country EncyclopediaTests" */;
+			buildPhases = (
+				51A9E8262D64D08A00C57FF4 /* Sources */,
+				51A9E8272D64D08A00C57FF4 /* Frameworks */,
+				51A9E8282D64D08A00C57FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51A9E82C2D64D08A00C57FF4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				51A9E82D2D64D08A00C57FF4 /* Country EncyclopediaTests */,
+			);
+			name = "Country EncyclopediaTests";
+			packageProductDependencies = (
+			);
+			productName = "Country EncyclopediaTests";
+			productReference = 51A9E82A2D64D08A00C57FF4 /* Country EncyclopediaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		51A9E8332D64D08A00C57FF4 /* Country EncyclopediaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51A9E8442D64D08A00C57FF4 /* Build configuration list for PBXNativeTarget "Country EncyclopediaUITests" */;
+			buildPhases = (
+				51A9E8302D64D08A00C57FF4 /* Sources */,
+				51A9E8312D64D08A00C57FF4 /* Frameworks */,
+				51A9E8322D64D08A00C57FF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51A9E8362D64D08A00C57FF4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				51A9E8372D64D08A00C57FF4 /* Country EncyclopediaUITests */,
+			);
+			name = "Country EncyclopediaUITests";
+			packageProductDependencies = (
+			);
+			productName = "Country EncyclopediaUITests";
+			productReference = 51A9E8342D64D08A00C57FF4 /* Country EncyclopediaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51A9E80F2D64D08900C57FF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					51A9E8162D64D08900C57FF4 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					51A9E8292D64D08A00C57FF4 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 51A9E8162D64D08900C57FF4;
+					};
+					51A9E8332D64D08A00C57FF4 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 51A9E8162D64D08900C57FF4;
+					};
+				};
+			};
+			buildConfigurationList = 51A9E8122D64D08900C57FF4 /* Build configuration list for PBXProject "Country Encyclopedia" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 51A9E80E2D64D08900C57FF4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 51A9E8182D64D08900C57FF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				51A9E8162D64D08900C57FF4 /* Country Encyclopedia */,
+				51A9E8292D64D08A00C57FF4 /* Country EncyclopediaTests */,
+				51A9E8332D64D08A00C57FF4 /* Country EncyclopediaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		51A9E8152D64D08900C57FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A9E8282D64D08A00C57FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A9E8322D64D08A00C57FF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51A9E8132D64D08900C57FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A9E8262D64D08A00C57FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A9E8302D64D08A00C57FF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51A9E82C2D64D08A00C57FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51A9E8162D64D08900C57FF4 /* Country Encyclopedia */;
+			targetProxy = 51A9E82B2D64D08A00C57FF4 /* PBXContainerItemProxy */;
+		};
+		51A9E8362D64D08A00C57FF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51A9E8162D64D08900C57FF4 /* Country Encyclopedia */;
+			targetProxy = 51A9E8352D64D08A00C57FF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		51A9E83C2D64D08A00C57FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		51A9E83D2D64D08A00C57FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		51A9E83F2D64D08A00C57FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Country Encyclopedia/Country_Encyclopedia.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Country Encyclopedia/Preview Content\"";
+				DEVELOPMENT_TEAM = ZRMTSKAY2A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Country Encyclopedia";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thinkitive.encyclopedia.Country-Encyclopedia";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51A9E8402D64D08A00C57FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Country Encyclopedia/Country_Encyclopedia.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Country Encyclopedia/Preview Content\"";
+				DEVELOPMENT_TEAM = ZRMTSKAY2A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Country Encyclopedia";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thinkitive.encyclopedia.Country-Encyclopedia";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		51A9E8422D64D08A00C57FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZRMTSKAY2A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thinkitive.encyclopedia.Country-EncyclopediaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Country Encyclopedia.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Country Encyclopedia";
+			};
+			name = Debug;
+		};
+		51A9E8432D64D08A00C57FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZRMTSKAY2A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thinkitive.encyclopedia.Country-EncyclopediaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Country Encyclopedia.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Country Encyclopedia";
+			};
+			name = Release;
+		};
+		51A9E8452D64D08A00C57FF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZRMTSKAY2A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thinkitive.encyclopedia.Country-EncyclopediaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Country Encyclopedia";
+			};
+			name = Debug;
+		};
+		51A9E8462D64D08A00C57FF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZRMTSKAY2A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thinkitive.encyclopedia.Country-EncyclopediaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Country Encyclopedia";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		51A9E8122D64D08900C57FF4 /* Build configuration list for PBXProject "Country Encyclopedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51A9E83C2D64D08A00C57FF4 /* Debug */,
+				51A9E83D2D64D08A00C57FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51A9E83E2D64D08A00C57FF4 /* Build configuration list for PBXNativeTarget "Country Encyclopedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51A9E83F2D64D08A00C57FF4 /* Debug */,
+				51A9E8402D64D08A00C57FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51A9E8412D64D08A00C57FF4 /* Build configuration list for PBXNativeTarget "Country EncyclopediaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51A9E8422D64D08A00C57FF4 /* Debug */,
+				51A9E8432D64D08A00C57FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51A9E8442D64D08A00C57FF4 /* Build configuration list for PBXNativeTarget "Country EncyclopediaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51A9E8452D64D08A00C57FF4 /* Debug */,
+				51A9E8462D64D08A00C57FF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 51A9E80F2D64D08900C57FF4 /* Project object */;
+}
