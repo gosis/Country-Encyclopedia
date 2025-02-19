@@ -14,24 +14,31 @@ class CountrySearchViewModel {
     
     private var countriesDict = [String: Country]()
     private let countriesSearchActor = CountrySearchActor()
+    private var populationActor: PopulationActor?
+    private let countryCodeActor = CountryCodeActor()
+    private let languagesActor = LanguagesActor()
     private let networkService: any NetworkServiceProtocol
     
     init(networkService: any NetworkServiceProtocol) {
         self.networkService = networkService
     }
     
-    func loadCountries() async {
+    func configureCountriesIfNeeded() async {
+        guard countriesDict.count == 0 else { return }
         
         // TODO fix
         let countries = try! await networkService.fetchData() as! [Country]
                 
         for country in countries {
-            
+                        
             // Insert country name in the Trie
             // and in quicklookup dict
             let name = country.name.common.lowercased()
             await countriesSearchActor.insert(name)
             countriesDict[name] = country
+            
+            //add to country codes lookup
+            await countryCodeActor.appendCountry(code: country.cca3, name: name)
             
             // Insert all translated country names
             // that don't match the name already inserted
@@ -43,7 +50,16 @@ class CountrySearchViewModel {
                     countriesDict[commonName] = country
                 }
             }
+            
+            // add each language to languages actor cache
+            if let languages = country.languages {
+                for language in languages.list {
+                    await languagesActor.append(language: language, name: name)
+                }
+            }
         }
+        
+        populationActor = PopulationActor(countries: countries)
     }
     
     @MainActor
@@ -58,17 +74,13 @@ class CountrySearchViewModel {
             // foundCountryNames includes common and translated names
             // meaning it contains multiple names pointing to the same country
             let foundCountryNames = await countriesSearchActor.searchPrefix(trimmedPrefix)
-            var countryNamesSet = Set<String>()
             
             // Iterate each found countryName
             // find corresponding country in countriesDict and remove duplicates
             // by using Set
-            for name in foundCountryNames {
-                if let country = countriesDict[name] {
-                    let trimmedName = country.name.common.lowercased()
-                    countryNamesSet.insert(trimmedName)
-                }
-            }
+            let countryNamesSet = Set(
+                foundCountryNames.compactMap { countriesDict[$0]?.name.common.lowercased() }
+            )
             
             // Return filtered country names
             return countryNamesSet.compactMap { countriesDict[$0] }
@@ -76,5 +88,31 @@ class CountrySearchViewModel {
         
         
         self.foundCountries = countries
+    }
+    
+    @MainActor
+    func getPopulationRank(name: String) async -> Int? {
+        return await populationActor?.populationDict[name]
+    }
+    
+    @MainActor
+    func getCountryByCode(code: String) async -> Country? {
+        guard let name = await countryCodeActor.getCountryName(code: code) else { return nil }
+        
+        return countriesDict[name]
+    }
+    
+    @MainActor
+    func getCountryNamesForLanguage(language: String) async -> Array<Country> {
+        guard let countries = await languagesActor.getCountryCodesForLanguage(language) else { return [] }
+        
+        var countriesArray: [Country] = []
+        for countryName in countries {
+            if let country = countriesDict[countryName] {
+                countriesArray.append(country)
+            }
+        }
+        
+        return countriesArray
     }
 }

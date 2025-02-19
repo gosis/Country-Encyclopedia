@@ -29,9 +29,32 @@
 		51A9E8342D64D08A00C57FF4 /* Country EncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Country EncyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		51C38B8B2D665318008D9B06 /* Exceptions for "Country Encyclopedia" folder in "Country Encyclopedia" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Country-Encyclopedia-Info.plist",
+			);
+			target = 51A9E8162D64D08900C57FF4 /* Country Encyclopedia */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		51A9EAD82D66056600C57FF4 /* Exceptions for "Mocks" folder in "Compile Sources" phase from "Country Encyclopedia" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 51A9E8132D64D08900C57FF4 /* Sources */;
+			membershipExceptions = (
+				countries.json,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		51A9E8192D64D08900C57FF4 /* Country Encyclopedia */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				51C38B8B2D665318008D9B06 /* Exceptions for "Country Encyclopedia" folder in "Country Encyclopedia" target */,
+			);
 			path = "Country Encyclopedia";
 			sourceTree = "<group>";
 		};
@@ -43,6 +66,14 @@
 		51A9E8372D64D08A00C57FF4 /* Country EncyclopediaUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Country EncyclopediaUITests";
+			sourceTree = "<group>";
+		};
+		51A9EAD42D66049000C57FF4 /* Mocks */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				51A9EAD82D66056600C57FF4 /* Exceptions for "Mocks" folder in "Compile Sources" phase from "Country Encyclopedia" target */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +106,7 @@
 		51A9E80E2D64D08900C57FF4 = {
 			isa = PBXGroup;
 			children = (
+				51A9EAD42D66049000C57FF4 /* Mocks */,
 				51A9E8192D64D08900C57FF4 /* Country Encyclopedia */,
 				51A9E82D2D64D08A00C57FF4 /* Country EncyclopediaTests */,
 				51A9E8372D64D08A00C57FF4 /* Country EncyclopediaUITests */,
@@ -109,6 +141,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				51A9E8192D64D08900C57FF4 /* Country Encyclopedia */,
+				51A9EAD42D66049000C57FF4 /* Mocks */,
 			);
 			name = "Country Encyclopedia";
 			packageProductDependencies = (
@@ -401,6 +434,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Country-Encyclopedia-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Country Encyclopedia";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = Launch;
@@ -434,6 +468,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Country-Encyclopedia-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Country Encyclopedia";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = Launch;

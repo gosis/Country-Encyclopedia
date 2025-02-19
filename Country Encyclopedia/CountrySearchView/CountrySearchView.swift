@@ -9,31 +9,37 @@ import SwiftUI
 import SwiftData
 
 struct CountrySearchView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
     
-    @State var countrySearchVM = CountrySearchViewModel(networkService: NetworkService())
+    @Environment(CountrySearchViewModel.self) var countrySearchVM
     
+    @State private var selectedCountry: Country?
+    @State private var path: [String] = []
     @State var searchText = ""
     
     var body: some View {
-        NavigationStack {
+        NavigationStack() {
             VStack {
                 ScrollView {
                     LazyVStack {
                         ForEach(countrySearchVM.foundCountries, id: \.self) { country in
-                            HStack {
-                                Text(country.name.common)
-                                    .foregroundColor(Color.black)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                                Text(Utilities.flagEmoji(from: country.cca2))
-                            }
-                            .padding()
+                            Button(action: {
+                                DispatchQueue.main.async {
+                                    selectedCountry = country
+                                }
+                            }) {
+                                HStack {
+                                    Text(country.name.common)
+                                        .foregroundColor(Color.black)
+                                        .fontWeight(.semibold)
+                                    Spacer()
+                                    Text(Utilities.flagEmoji(from: country.cca2))
+                                }
+                                .padding()
                                 .frame(maxWidth: .infinity)
                                 .background(Color.gray.opacity(0.5))
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .padding(.horizontal)
+                            }
                         }
                     }
                 }
@@ -46,6 +52,9 @@ struct CountrySearchView: View {
                 .background(AnimatingGradientView()
                     .ignoresSafeArea()
                 )
+                .sheet(item: $selectedCountry) { country in
+                    CountryDetailView(country: country)
+                }
             }
             .navigationTitle("Countries")
 
@@ -54,12 +63,17 @@ struct CountrySearchView: View {
         .onAppear {
             let countrySearchViewModel = countrySearchVM
             Task {
-                await countrySearchViewModel.loadCountries()
+                await countrySearchViewModel.configureCountriesIfNeeded()
             }
         }
     }
 }
 
 #Preview {
+    let mockNetworkService = NetworkService()
+    let countrySearchVM = CountrySearchViewModel(networkService: mockNetworkService)
+    let mockCountries = MockData.mockCountries()
+
     CountrySearchView()
+        .environment(countrySearchVM)
 }

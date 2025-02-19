@@ -12,7 +12,7 @@ import SwiftData
 struct Country_EncyclopediaApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            FavoriteCountry.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -22,10 +22,13 @@ struct Country_EncyclopediaApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    @State var countrySearchVM = CountrySearchViewModel(networkService: NetworkService())
 
     var body: some Scene {
         WindowGroup {
             CountrySearchView()
+                .environment(countrySearchVM)
         }
         .modelContainer(sharedModelContainer)
     }
