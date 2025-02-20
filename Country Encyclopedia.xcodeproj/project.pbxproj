@@ -29,16 +29,6 @@
 		51A9E8342D64D08A00C57FF4 /* Country EncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Country EncyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		51C38B8B2D665318008D9B06 /* Exceptions for "Country Encyclopedia" folder in "Country Encyclopedia" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Country-Encyclopedia-Info.plist",
-			);
-			target = 51A9E8162D64D08900C57FF4 /* Country Encyclopedia */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 		51A9EAD82D66056600C57FF4 /* Exceptions for "Mocks" folder in "Compile Sources" phase from "Country Encyclopedia" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
@@ -52,9 +42,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		51A9E8192D64D08900C57FF4 /* Country Encyclopedia */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				51C38B8B2D665318008D9B06 /* Exceptions for "Country Encyclopedia" folder in "Country Encyclopedia" target */,
-			);
 			path = "Country Encyclopedia";
 			sourceTree = "<group>";
 		};

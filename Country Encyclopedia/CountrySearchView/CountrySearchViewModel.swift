@@ -17,18 +17,32 @@ class CountrySearchViewModel {
     private var populationActor: PopulationActor?
     private let countryCodeActor = CountryCodeActor()
     private let languagesActor = LanguagesActor()
-    private let networkService: any NetworkServiceProtocol
     
-    init(networkService: any NetworkServiceProtocol) {
+    
+    private let networkService: any NetworkServiceProtocol
+    private let localCountriesProvider: LocalCountriesProvider
+    
+    init(networkService: any NetworkServiceProtocol, localCountriesProvider: LocalCountriesProvider) {
         self.networkService = networkService
+        self.localCountriesProvider = localCountriesProvider
     }
     
     func configureCountriesIfNeeded() async {
         guard countriesDict.count == 0 else { return }
         
-        // TODO fix
-        let countries = try! await networkService.fetchData() as! [Country]
-                
+        var countries = await localCountriesProvider.loadLocalCountries()
+        
+        // If local DB is empty
+        // load countries from network
+        // and store in DB
+        if countries.isEmpty {
+            if let networkCountries = try? await networkService.fetchData() as? [Country] {
+                countries = networkCountries
+            }
+            
+            await localCountriesProvider.addLocalCountries(countries)
+        }
+                        
         for country in countries {
                         
             // Insert country name in the Trie
@@ -43,11 +57,13 @@ class CountrySearchViewModel {
             // Insert all translated country names
             // that don't match the name already inserted
             // in trie and in quick lookup dict
-            for (_, value) in country.translations {
-                let commonName = value.common.lowercased()
-                if commonName != name {
-                    await countriesSearchActor.insert(commonName)
-                    countriesDict[commonName] = country
+            if let translations = country.translations {
+                for (_, value) in translations {
+                    let commonName = value.common.lowercased()
+                    if commonName != name {
+                        await countriesSearchActor.insert(commonName)
+                        countriesDict[commonName] = country
+                    }
                 }
             }
             
@@ -114,5 +130,14 @@ class CountrySearchViewModel {
         }
         
         return countriesArray
+    }
+}
+
+// Local model property change extension
+// after each prop changes saveModel must be called
+extension CountrySearchViewModel {
+    func toggleFavorite(country: Country) async {
+        country.toggleFavorite()
+        await localCountriesProvider.saveModel()
     }
 }

@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftData
 
+@Model
 class CountryLanguages: Codable, @unchecked Sendable {
-    let list: [String]
+    var list: [String]
 
     init(list: [String]) {
         self.list = list

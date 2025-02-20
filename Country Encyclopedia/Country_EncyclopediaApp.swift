@@ -12,7 +12,7 @@ import SwiftData
 struct Country_EncyclopediaApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            FavoriteCountry.self,
+            Country.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -23,7 +23,15 @@ struct Country_EncyclopediaApp: App {
         }
     }()
     
-    @State var countrySearchVM = CountrySearchViewModel(networkService: NetworkService())
+    @State var countrySearchVM: CountrySearchViewModel
+    
+    init() {
+        let context = sharedModelContainer.mainContext
+        let provider = LocalCountriesProvider.init(modelContainer: context.container)
+        _countrySearchVM = State(wrappedValue: CountrySearchViewModel(
+            networkService: NetworkService(), localCountriesProvider: provider
+        ))
+    }
 
     var body: some Scene {
         WindowGroup {

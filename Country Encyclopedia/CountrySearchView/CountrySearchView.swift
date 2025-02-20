@@ -57,9 +57,8 @@ struct CountrySearchView: View {
                 }
             }
             .navigationTitle("Countries")
-
         }
-        .tint(Color.black)
+        .tint(Color.primary)
         .onAppear {
             let countrySearchViewModel = countrySearchVM
             Task {
@@ -71,8 +70,10 @@ struct CountrySearchView: View {
 
 #Preview {
     let mockNetworkService = NetworkService()
-    let countrySearchVM = CountrySearchViewModel(networkService: mockNetworkService)
-    let mockCountries = MockData.mockCountries()
+    let inMemoryModelContext = MockModelContext.inMemoryModelContext()
+    let localCountriesProvider = MockModelContext.mockLocalCountriesProvider()
+    let countrySearchVM = CountrySearchViewModel(networkService: mockNetworkService,
+                                                 localCountriesProvider: localCountriesProvider)
 
     CountrySearchView()
         .environment(countrySearchVM)

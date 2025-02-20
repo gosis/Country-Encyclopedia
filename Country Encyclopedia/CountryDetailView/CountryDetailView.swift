@@ -20,6 +20,7 @@ struct CountryDetailView: View {
                     let capital = country.capital?.first
                     let coordinates = country.getCapitalCoordinates()
                     let borders = country.borders ?? []
+                    let isFavorite = country.isFavorite
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 15) {
@@ -104,8 +105,19 @@ struct CountryDetailView: View {
                     }
                     .navigationTitle(commonName)
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
+                        ToolbarItem(placement: .topBarLeading) {
                             FlagView(countryCode: country.cca2)
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button(action: {
+                                let searchVM = countrySearchVM
+                                Task {
+                                    await searchVM.toggleFavorite(country: country)
+                                }
+                            }) {
+                                Image(systemName: isFavorite ? "star.fill" : "star")
+                                    .foregroundColor(isFavorite ? .yellow : .gray)
+                            }
                         }
                     }
                 } else {
@@ -178,7 +190,11 @@ struct CountryDetailView: View {
 #Preview {
     @Previewable @State var path: [String] = []
     let mockNetworkService = NetworkService()
-    let countrySearchVM = CountrySearchViewModel(networkService: mockNetworkService)
+    let inMemoryModelContext = MockModelContext.inMemoryModelContext()
+    let localCountriesProvider = MockModelContext.mockLocalCountriesProvider()
+    
+    let countrySearchVM = CountrySearchViewModel(networkService: mockNetworkService,
+                                                 localCountriesProvider: localCountriesProvider)
     let mockCountries = MockData.mockCountries()
     
     CountryDetailView(country: mockCountries[0])
