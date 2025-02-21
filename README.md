@@ -1,17 +1,17 @@
 # Offline-First Country Searcher
 
 Country searcher test using [restcountries.com](https://restcountries.com/v3.1/all) as the data source. 
-- Implements an offline first country search and detail view
+- Implements an offline first country search using `Trie` and indexed key value caches
 - Provides A `ViewModel` that **fetches** and **stores country data locally** using `SwiftData`.
-- Data is indexed using Key value stores and `Trie` for faster search and O(1) lookup for most cases
+- Provides 2 Views as Examples implementing the `ViewModel`
 
 ---
 
 ## Getting Started
 
-* To use `CountrSearchViewModel` your app must use `SwiftData` and must provide access to `modelContext`
-* Copy `CountrSearchViewModel` contents  to your project or extract into a Swift Package
-* Initialise `CountrySearchViewModel` as the `ViewModel` for your view that needs to load/use country data
+* To use `CountrSearchViewModel` your app must use `SwiftData` and must provide access to its `modelContext`
+* Copy `CountrSearchViewModel` contents  to your project or extract them into a Swift Package
+* Initialise `CountrySearchViewModel` as the `ViewModel` for your view that will use country data
 * Use public functions on `CountrySearchViewModel` from within background context using Swift `async/await`
 
 ---
@@ -113,6 +113,9 @@ func toggleFavorite(country: Country) async
 * @see `#preview` implementation of Example views to see how mock data are set up
 
 
-
+### TODO
+* Make `@Transient` variables on `Country` immutable
+* Wrap `CountrySearchViewModel` into a Swift package
+* Remove `countries.json` from Copy Bundle resources
 
 
