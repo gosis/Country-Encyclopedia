@@ -24,7 +24,6 @@ struct CountryCapitalInfo: Codable {
         }
     }
     
-    // MARK: - Codable Compliance
     enum CodingKeys: String, CodingKey {
         case latitude
         case longitude
@@ -33,11 +32,9 @@ struct CountryCapitalInfo: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        // Decode latitude and longitude
         latitude = try container.decodeIfPresent(Double.self, forKey: .latitude)
         longitude = try container.decodeIfPresent(Double.self, forKey: .longitude)
         
-        // Backward compatibility: Decode from latlng array if needed
         if latitude == nil || longitude == nil {
             if let coords = try? container.decode([Double].self, forKey: .latitude), coords.count == 2 {
                 latitude = coords[0]
@@ -48,8 +45,6 @@ struct CountryCapitalInfo: Codable {
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        // Encode latitude and longitude
         try container.encodeIfPresent(latitude, forKey: .latitude)
         try container.encodeIfPresent(longitude, forKey: .longitude)
     }

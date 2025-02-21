@@ -14,19 +14,22 @@ actor NetworkService: @preconcurrency NetworkServiceProtocol {
     
     func fetchData() async throws -> [Country] {
         guard let url = url else {
-            throw NSError(domain: "NetworkService", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+            throw NSError(domain: "NetworkService", code: 1001,
+                          userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
         }
 
         let (data, response) = try await URLSession.shared.data(from: url)
 
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw NSError(domain: "NetworkService", code: 1002, userInfo: [NSLocalizedDescriptionKey: "Invalid Response"])
+            throw NSError(domain: "NetworkService", code: 1002,
+                          userInfo: [NSLocalizedDescriptionKey: "Invalid Response"])
         }
 
         do {
             return try JSONDecoder().decode(T.self, from: data)
         } catch {
-            throw NSError(domain: "NetworkService", code: 1003, userInfo: [NSLocalizedDescriptionKey: "Failed to decode JSON"])
+            throw NSError(domain: "NetworkService", code: 1003,
+                          userInfo: [NSLocalizedDescriptionKey: "Failed to decode JSON"])
         }
     }
 }

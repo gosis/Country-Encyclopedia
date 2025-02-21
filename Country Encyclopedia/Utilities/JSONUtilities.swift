@@ -8,7 +8,6 @@
 import Foundation
 
 class JSONUtilities {
-    // MARK: - Encoding and Decoding Helpers
    public static func encodeArray<T: Encodable>(_ array: [T]?) -> String? {
        guard let array = array else { return nil }
        let encoder = JSONEncoder()

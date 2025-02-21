@@ -27,9 +27,10 @@ struct Country_EncyclopediaApp: App {
     
     init() {
         let context = sharedModelContainer.mainContext
-        let provider = LocalCountriesProvider.init(modelContainer: context.container)
+        let localCountriesModelActor = LocalCountriesModelActor.init(modelContainer: context.container)
         _countrySearchVM = State(wrappedValue: CountrySearchViewModel(
-            networkService: NetworkService(), localCountriesProvider: provider
+            networkService: NetworkService(),
+            localCountriesModelActor: localCountriesModelActor
         ))
     }
 

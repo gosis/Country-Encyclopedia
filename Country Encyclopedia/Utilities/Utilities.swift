@@ -8,7 +8,6 @@
 import Foundation
 
 class Utilities {
-    
     public static func flagEmoji(from countryCode: String) -> String {
         let base: UInt32 = 127397
         var emoji = ""

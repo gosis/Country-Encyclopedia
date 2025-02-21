@@ -71,9 +71,9 @@ struct CountrySearchView: View {
 #Preview {
     let mockNetworkService = NetworkService()
     let inMemoryModelContext = MockModelContext.inMemoryModelContext()
-    let localCountriesProvider = MockModelContext.mockLocalCountriesProvider()
+    let localCountriesModelActor = MockModelContext.mockLocalCountriesModelActor()
     let countrySearchVM = CountrySearchViewModel(networkService: mockNetworkService,
-                                                 localCountriesProvider: localCountriesProvider)
+                                                 localCountriesModelActor: localCountriesModelActor)
 
     CountrySearchView()
         .environment(countrySearchVM)

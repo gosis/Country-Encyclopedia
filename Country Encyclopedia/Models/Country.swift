@@ -5,7 +5,6 @@
 //  Created by Gints Osis on 18/02/2025.
 //
 
-import Foundation
 import SwiftData
 
 @Model
@@ -14,14 +13,14 @@ final class Country: Hashable, @unchecked Sendable {
     init(name: CountryName,
          cca2: String,
          cca3: String,
-         languages: CountryLanguages? = nil,
          population: Int,
          capitalInfo: CountryCapitalInfo? = nil,
          isFavorite: Bool,
          bordersJson: String?,
          latlngJson: String?,
          translationsJson: String?,
-         capitalJson: String?
+         capitalJson: String?,
+         languagesJson: String?
     ) {
         self.name = name
         self.cca2 = cca2
@@ -31,8 +30,8 @@ final class Country: Hashable, @unchecked Sendable {
         self.capitalJSON = capitalJson
         self.latlngJSON = latlngJson
         self.bordersJSON = bordersJson
+        self.languagesJSON = languagesJson
         
-        self.languages = languages
         self.population = population
         self.capitalInfo = capitalInfo
         self.isFavorite = isFavorite
@@ -44,7 +43,6 @@ final class Country: Hashable, @unchecked Sendable {
     private(set) var cca3: String
     private(set) var population: Int
     private(set) var isFavorite: Bool
-    private(set) var languages: CountryLanguages?
     private(set) var capitalInfo: CountryCapitalInfo?
     
     // JSON strings of incompatible SwiftData types [String] [Double]
@@ -53,6 +51,7 @@ final class Country: Hashable, @unchecked Sendable {
     private var translationsJSON: String?
     private var latlngJSON: String?
     private var bordersJSON: String?
+    private var languagesJSON: String?
     
     // Publicly Exposed properties loaded from json strings
     @Transient var capital: [String]? {
@@ -75,6 +74,15 @@ final class Country: Hashable, @unchecked Sendable {
             JSONUtilities.decodeArray(bordersJSON) as [String]?
         }
     }
+    @Transient var languages: [String] {
+        get {
+            if let languagesDict = JSONUtilities.decodeDict(languagesJSON) as [String: String]? {
+                return Array(languagesDict.values)
+            }
+            return []
+        }
+    }
+
     
     func toggleFavorite() {
         isFavorite = !isFavorite
@@ -138,6 +146,13 @@ extension Country: Codable {
             latlngJson = try container.decodeIfPresent(String.self, forKey: .latlngJSON)
         }
         
+        var languagesJson: String?
+        if let networkLanguages = try container.decodeIfPresent([String: String].self, forKey: .languages) {
+            languagesJson = JSONUtilities.encodeDict(networkLanguages)
+        } else {
+            languagesJson = try container.decodeIfPresent(String.self, forKey: .languages)
+        }
+        
         var bordersJson: String?
         if let networkBorders = try container.decodeIfPresent([String].self, forKey: .borders) {
             bordersJson = JSONUtilities.encodeArray(networkBorders)
@@ -153,14 +168,15 @@ extension Country: Codable {
                   bordersJson: bordersJson,
                   latlngJson: latlngJson,
                   translationsJson: translationsJson,
-                  capitalJson: capitalJSON
+                  capitalJson: capitalJSON,
+                  languagesJson: languagesJson
         )
    }
     
     enum CodingKeys: String, CodingKey {
         case name, cca2, cca3, population, isFavorite
         case capitalJSON, capital, translationsJSON, translations,
-             latlngJSON, latlng, bordersJSON, borders
+             latlngJSON, latlng, bordersJSON, borders, languagesJSON, languages
     }
 }
 

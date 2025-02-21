@@ -39,7 +39,7 @@ struct AnimatingGradientView: View {
             colors: [
                 .red, .purple, .indigo,
                 .orange, .blue, .green,
-                .yellow, .mint, .black // Adjusted colors to match points
+                .yellow, .mint, .black
             ]
         )
         .onAppear {
@@ -55,7 +55,6 @@ struct AnimatingGradientView: View {
         }
     }
 
-    // ✅ Clamps the sine values to prevent points from going outside their intended range
     func clampedSinInRange(_ range: ClosedRange<Float>, offset: Float, timeScale: Float, t: Float) -> Float {
         let amplitude = (range.upperBound - range.lowerBound) / 2
         let midPoint = (range.upperBound + range.lowerBound) / 2

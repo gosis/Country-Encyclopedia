@@ -20,13 +20,13 @@ class MockModelContext {
         }
     }
     
-    static func mockLocalCountriesProvider() -> LocalCountriesProvider {
+    static func mockLocalCountriesModelActor() -> LocalCountriesModelActor {
         let schema = Schema([Country.self])
         let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         
         do {
             let container = try ModelContainer(for: schema, configurations: [configuration])
-            return LocalCountriesProvider.init(modelContainer: container)
+            return LocalCountriesModelActor.init(modelContainer: container)
         } catch {
             fatalError("Failed to create in-memory ModelContainer: \(error)")
         }

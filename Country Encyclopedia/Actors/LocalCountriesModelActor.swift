@@ -1,5 +1,5 @@
 //
-//  LocalCountriesProvider.swift
+//  LocalCountriesModelActor.swift
 //  Country Encyclopedia
 //
 //  Created by Gints Osis on 20/02/2025.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @ModelActor
-actor LocalCountriesProvider {
+actor LocalCountriesModelActor {
     
     func loadLocalCountries() async -> [Country] {
         let descriptor = FetchDescriptor<Country>()
@@ -36,7 +36,7 @@ actor LocalCountriesProvider {
     func saveModel() {
         do {
             try modelContext.save()
-            print("Successfully saved countries.")
+            print("Successfully saved country.")
         } catch {
             print("Failed to save countries: \(error)")
         }

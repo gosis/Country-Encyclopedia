@@ -67,12 +67,12 @@ struct CountryDetailView: View {
                                 .frame(height: 50)
                             }
                             
-                            if let languages = country.languages, !languages.list.isEmpty {
+                            if !country.languages.isEmpty {
                                 Text("Spoken Languages").font(.headline)
                                 
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 10) {
-                                        ForEach(languages.list, id: \.self) { language in
+                                        ForEach(country.languages, id: \.self) { language in
                                             Button(action: {
                                                 selectedLanguage = language
                                                 getCountriesForLanguage(language)
@@ -188,13 +188,12 @@ struct CountryDetailView: View {
 }
 
 #Preview {
-    @Previewable @State var path: [String] = []
     let mockNetworkService = NetworkService()
     let inMemoryModelContext = MockModelContext.inMemoryModelContext()
-    let localCountriesProvider = MockModelContext.mockLocalCountriesProvider()
+    let localCountriesModelActor = MockModelContext.mockLocalCountriesModelActor()
     
     let countrySearchVM = CountrySearchViewModel(networkService: mockNetworkService,
-                                                 localCountriesProvider: localCountriesProvider)
+                                                 localCountriesModelActor: localCountriesModelActor)
     let mockCountries = MockData.mockCountries()
     
     CountryDetailView(country: mockCountries[0])
